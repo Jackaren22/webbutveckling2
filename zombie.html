@@ -8,9 +8,28 @@
 <body>
     <script src="simple.js">
         /*En zombie*/
+        var zombie = {x: random(totalWidth), y:random(totalHeight), speed:random(1,5)};
         /*Zombies*/
+        var zombies = [zombie];
         /*Add zombies to list*/
+        for(i = 0; 1 < 10; i++){
+            zombies.push({x:random(totalWidth), y:random(totalHeight)})
+        }
         /*Update*/
+        function update (){
+            clearScreen();
+            var i = 0;
+            while(i < 10) {
+                var zombie = zombiez[i]
+                picture(zombie.x, zombie.y, "http://spelprogrammering.nu/bilder/zombie.png")
+
+                /* Controls*/
+                if(mouse.x < zombie.x){
+
+                }
+
+            }
+        }
         /*ClearScreen*/
         
         
