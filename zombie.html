@@ -10,24 +10,38 @@
         /*En zombie*/
         var zombie = {x: random(totalWidth), y:random(totalHeight), speed:random(1,5)};
         /*Zombies*/
-        var zombies = [zombie];
+        var zombies = [];
         /*Add zombies to list*/
-        for(i = 0; 1 < 10; i++){
-            zombies.push({x:random(totalWidth), y:random(totalHeight)})
+        for(i = 0; i < 100; i++){
+            zombies.push({x: random(totalWidth), y:random(totalHeight), speed:random(1,25)});
         }
         /*Update*/
         function update (){
             clearScreen();
             var i = 0;
-            while(i < 10) {
-                var zombie = zombiez[i]
-                picture(zombie.x, zombie.y, "http://spelprogrammering.nu/bilder/zombie.png")
+            while(i < 25) {
+                var zombie = zombies[i];
+
+                picture(zombie.x, zombie.y, "https://media.discordapp.net/attachments/694869709581189131/751403131543355412/Swift.png?width=378&height=669");
 
                 /* Controls*/
-                if(mouse.x < zombie.x){
-
+                if(zombie.x < mouse.x ){
+                    zombie.x += zombie.speed;
                 }
-
+                else {
+                    zombie.x -= zombie.speed;
+                }
+                if(zombie.y < mouse.y ){
+                    zombie.y += zombie.speed;
+                }
+                else {
+                    zombie.y -= zombie.speed;
+                }
+                if (distance(mouse, zombie) < 5){
+                    alert("GET OUT OF MY SWAMP");
+                    stopUpdate();
+                }
+                i += 1;
             }
         }
         /*ClearScreen*/
