@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="simple.js">
+
+        function update()
+{
+
+    for (var i=1; i<=50; i++) {
+    var x = random(0,window.innerWidth);
+    var y = random(0,window.innerHeight);
+
+    var baby = ["shark.png", "shark2.png","shark3.png","shark4.png","shark5.png","shark6.png","shark7.png","shark8.png","shark9.png","shark10.png"];
+    var z = baby[random(0,9)];
+
+
+    picture(x,y,z);
+    
+    
+
+    }
+
+}
+    </script>
+
+</body>
+</html>
