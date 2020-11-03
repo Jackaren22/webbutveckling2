@@ -1,0 +1,25 @@
+@import './variables'; // Hur man importar andra filer
+
+@mixin flexCenter($direction, $background) { // Hur man skapar en funktion med extra redegering
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+header {
+
+    @include flexCenter(column, blue); // Hur man använder en funktion
+    height: 100vw;
+    button {
+        background:$mainbutton ; // Hur man använder en variabel
+        &::after {
+            content: "YOOOOOOO"
+        }
+    }
+}
+
+// @extend kan kopiera kod, t.e.x @extend header i .contact skulle ge .contact samma kod.
+
+//Prioriteten av kod går från bot till top, botten av koden är högst prio
